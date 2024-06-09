@@ -1,11 +1,15 @@
-FROM openjdk:22-jdk as java
+FROM maven:3.9.7-sapmachine-22 AS builder
 
 WORKDIR /app
-
-COPY . /app
-
+COPY pom.xml ./
+RUN mvn -N wrapper:wrapper -Dmaven=3.9.7
+RUN ./mvnw dependency:go-offline
+COPY src ./src
 RUN ./mvnw clean package -DskipTests
 
-WORKDIR /app/target
+FROM openjdk:22-jdk-slim
 
-ENTRYPOINT ["java","-jar","clinic-0.0.1-SNAPSHOT.jar"]
+WORKDIR /app
+COPY --from=builder /app/target/*.jar app.jar
+EXPOSE 8080
+ENTRYPOINT ["java", "-jar", "app.jar"]
