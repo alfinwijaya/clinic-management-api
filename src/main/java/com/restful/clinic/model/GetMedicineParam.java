@@ -1,13 +1,9 @@
 package com.restful.clinic.model;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.Date;
 
 @Data
 @AllArgsConstructor
@@ -18,16 +14,16 @@ public class GetMedicineParam {
 
     private String size;
 
-    private Date fromDate;
+    private String from_date;
 
-    private Date toDate;
+    private String to_date;
 
-    private String farmalkesType;
+    private String farmalkes_type;
 
     private String keyword;
 
-    private String templateCode;
+    private String template_code;
 
-    private String packagingCode;
+    private String packaging_code;
 
 }

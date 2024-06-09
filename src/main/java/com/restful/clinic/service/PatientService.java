@@ -30,7 +30,7 @@ public class PatientService {
         validationService.validate(request);
 
         if(patientRepository.existsById(request.getUsername())){
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Username already exist");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Username already exists");
         }
 
         Patient patient = new Patient();

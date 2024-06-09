@@ -33,23 +33,23 @@ public class MedicineService {
                 .queryParam("size", size)
                 .queryParam("product_type", "farmasi"); // Assuming this is always required
 
-        if (param.getFromDate() != null) {
-            uriBuilder.queryParam("from_date", param.getFromDate());
+        if (param.getFrom_date() != null) {
+            uriBuilder.queryParam("from_date", param.getFrom_date());
         }
-        if (param.getToDate() != null) {
-            uriBuilder.queryParam("to_date", param.getToDate());
+        if (param.getTo_date() != null) {
+            uriBuilder.queryParam("to_date", param.getTo_date());
         }
-        if (param.getFarmalkesType() != null) {
-            uriBuilder.queryParam("farmalkes_type", param.getFarmalkesType());
+        if (param.getFarmalkes_type() != null) {
+            uriBuilder.queryParam("farmalkes_type", param.getFarmalkes_type());
         }
         if (param.getKeyword() != null) {
             uriBuilder.queryParam("keyword", param.getKeyword());
         }
-        if (param.getTemplateCode() != null) {
-            uriBuilder.queryParam("template_code", param.getTemplateCode());
+        if (param.getTemplate_code() != null) {
+            uriBuilder.queryParam("template_code", param.getTemplate_code());
         }
-        if (param.getPackagingCode() != null) {
-            uriBuilder.queryParam("packaging_code", param.getPackagingCode());
+        if (param.getPackaging_code() != null) {
+            uriBuilder.queryParam("packaging_code", param.getPackaging_code());
         }
 
         String uri = uriBuilder.toUriString();
