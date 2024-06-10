@@ -15,9 +15,7 @@ public class SatuSehatService {
 
     private String accessToken;
     public String getAccessToken() {
-        if (accessToken == null) {
-            fetchAccessToken();
-        }
+        fetchAccessToken();
         return accessToken;
     }
 
