@@ -31,7 +31,7 @@ public class MedicineService {
         UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromHttpUrl(baseUri)
                 .queryParam("page", page)
                 .queryParam("size", size)
-                .queryParam("product_type", "farmasi"); // Assuming this is always required
+                .queryParam("product_type", "farmasi");
 
         if (param.getFrom_date() != null) {
             uriBuilder.queryParam("from_date", param.getFrom_date());
@@ -66,7 +66,7 @@ public class MedicineService {
 
             return WebResponse.<Object>builder().data(json).build();
         } catch (HttpStatusCodeException e) {
-            // Convert the response body to a Map to extract error details
+            // Convert the response body to a Map (Dictionary) to extract error details
             String responseBody = e.getResponseBodyAsString();
             Map<String, Object> errorResponse = objectMapper.readValue(responseBody, Map.class);
 
